@@ -20,7 +20,7 @@ import java.util.List;
 
 @Component
 public class ApiMarket {
-    private static String apiKey = "818cea5d4amsh80240cea23f1a02p1bb868jsn258af4974d7b";
+    private static String apiKey = "f03690d8f5msh331f361962422c1p1e14eejsn08d62e82efc7";
 
     public static String makeAPICall(String uri, List<NameValuePair> parameters)
             throws URISyntaxException, IOException {
