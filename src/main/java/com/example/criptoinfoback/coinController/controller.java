@@ -8,8 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Array;
-
 @RestController
 @RequestMapping("/apiprovider")
 @CrossOrigin
@@ -17,7 +15,7 @@ public class controller {
     @Autowired
     ApiPokemon apiPokemon;
     @Autowired
-    ApiCoinMarketCap apiCoinMarketCap;
+    ApiMarket apiMarket;
     @Autowired
     ApiNationalize apiNationalize;
     @Autowired
@@ -79,4 +77,15 @@ public class controller {
         return new ResponseEntity<String>(apiDeezer.getTracks(artistid),HttpStatus.OK);
     }
 
+    @GetMapping("/marketnews/{company}")
+    public ResponseEntity<String> getCompanyNews(@PathVariable("company") String company){
+        logger.info("/marketnews");
+        return new ResponseEntity<String>(apiMarket.getNews(company),HttpStatus.OK);
+    }
+
+    @GetMapping("/marketinfo/{company}")
+    public ResponseEntity<String> getCompanyInfo(@PathVariable("company") String company){
+        logger.info("/marketinfo");
+        return new ResponseEntity<String>(apiMarket.getCompanyInfo(company),HttpStatus.OK);
+    }
 }
