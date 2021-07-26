@@ -1,4 +1,4 @@
-package com.example.criptoinfoback.coinController;
+package com.example.criptoinfoback.Controller;
 
 import com.example.criptoinfoback.interImpl.*;
 import org.slf4j.Logger;
